@@ -1,0 +1,282 @@
+﻿{
+  "name": "My Tasks-from-service.AAADEVSESImagotag",
+  "categories":
+[
+  {
+        "name": "SES-imagotag",
+        "mTypes": 
+         [
+            {
+                "name": "Serch Items",
+                "snapinVersion": "3.0",
+		"displayName": "Serch Items",
+                "tag": "serchItemsSES",
+                "svg": "hello",
+                "helpUrl": "hello.html",
+                "tile": "blue",
+                "serviceName": "CollabDesigner",
+                "custom": "true",
+                "nodeType": "activity",
+                "modelClass": "service.AAADEVSESImagotag.SerchItems.SerchItemsModel",
+                "executionClass": "service.AAADEVSESImagotag.SerchItems.SerchItemsExecution",
+		"mapping": "[\"input\", \"output\"]",
+                "properties": [
+                    {
+                        "name": "domain",
+                        "displayPropName": "Domain SES-imagotag Cloud",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setDomain",
+                        "mapping":"domain"
+                    },
+                    {
+                        "name": "page",
+                        "displayPropName": "Page",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setPage",
+                        "mapping":"page"
+                    },
+                    {
+                        "name": "pageSize",
+                        "displayPropName": "Page Size",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setPageSize",
+                        "mapping":"pageSize"
+                    },
+                    {
+                        "name": "ocpApimSubscriptionKey",
+                        "displayPropName": "Ocp-Apim-Subscription-Key",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setOcpApimSubscriptionKey",
+                        "mapping":"ocpApimSubscriptionKey"
+                    }
+                ],
+	        "input_schema": "{
+			        title: InputSchema,
+			        type: object,
+			        properties: {
+			            domain: {
+			                type: string
+                        },
+                        page: {
+			                type: string
+                        },
+                        pageSize: {
+			                type: string
+                        },
+                        ocpApimSubscriptionKey: {
+			                type: string
+			            }
+			        }
+            }",
+            "output_schema": "{
+                    title: OutputSchema,
+                    type:object,
+                    properties: 
+                    {
+                        page:{
+                            type:string
+                            },
+                        pageSize:{
+                            type:string
+                            },
+                        nextPage:{
+                            type:string
+                            },
+                        values:{
+                            type:array,
+                            items:{
+                                type:object,
+                                properties:{
+                                    id:{
+                                        type:string
+                                        },
+                                    domain:{
+                                        type:string
+                                        },
+                                    name:{
+                                        type:string
+                                        },
+                                    price:{
+                                        type:string
+                                        },
+                                    lastUpdate:{
+                                        type:string
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }"
+            },
+            {
+                "name": "Item By ID",
+                "snapinVersion": "3.0",
+				"displayName": "Item",
+                "tag": "imagotagID",
+                "svg": "hello",
+                "helpUrl": "hello.html",
+                "tile": "blue",
+                "serviceName": "CollabDesigner",
+                "custom": "true",
+                "nodeType": "activity",
+                "modelClass": "service.AAADEVSESImagotag.SerchItemById.SerchItemByIdModel",
+                "executionClass": "service.AAADEVSESImagotag.SerchItemById.SerchItemByIdExecution",
+				"mapping": "[\"input\", \"output\"]",
+                "properties": [
+                    {
+                        "name": "domain",
+                        "displayPropName": "Domain SES-imagotag Cloud",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setDomain",
+                        "mapping":"domain"
+                    },
+                    {
+                        "name": "ocpApimSubscriptionKey",
+                        "displayPropName": "Ocp-Apim-Subscription-Key",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setOcpApimSubscriptionKey",
+                        "mapping":"ocpApimSubscriptionKey"
+                    },
+                    {
+                        "name": "myId",
+                        "displayPropName": "ID Item",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setMyId",
+                        "mapping":"myId"
+                    }
+                    ],
+	        "input_schema": "{
+                title: InputSchema,
+                type: object,
+                properties: {
+                    domain: {
+                        type: string
+                    },
+                    ocpApimSubscriptionKey: {
+                        type: string
+                    },
+                    myId: {
+                        type: string
+                    }
+                }
+        }",
+            "output_schema": "{
+                title: OutputSchema,
+                type: object,
+                properties: {
+                    id: {
+                        type: string
+                        },
+                    domain: {
+                        type: string
+                        },
+                    name: {
+                        type: string
+                        },
+                    price: {
+                        type: string
+                        },
+                    lastUpdate: {
+                        type: string
+                        }
+                    }
+            }"
+            },
+            {
+                "name": "Modify Item",
+                "snapinVersion": "3.0",
+				"displayName": "Modify",
+                "tag": "modifyItem2",
+                "svg": "hello",
+                "helpUrl": "hello.html",
+                "tile": "blue",
+                "serviceName": "CollabDesigner",
+                "custom": "true",
+                "nodeType": "activity",
+                "modelClass": "service.AAADEVSESImagotag.ModifyPrice.ModifyPriceModel",
+                "executionClass": "service.AAADEVSESImagotag.ModifyPrice.ModifyPriceExecution",
+				"mapping": "[\"input\", \"output\"]",
+                "properties": [
+                    {
+                        "name": "domainModify",
+                        "displayPropName": "Domain SES-imagotag Cloud",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setDomain",
+                        "mapping":"domain"
+                    },
+                    {
+                        "name": "ocpApimSubscriptionKeyModify",
+                        "displayPropName": "Ocp-Apim-Subscription-Key",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setOcpApimSubscriptionKey",
+                        "mapping":"ocpApimSubscriptionKey"
+                    },
+                    {
+                        "name": "idItemModify",
+                        "displayPropName": "ID Item",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setIdItem",
+                        "mapping":"idItem"
+                    },
+                    {
+                        "name": "priceModify",
+                        "displayPropName": "New Price",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setPrice",
+                        "mapping":"price"
+                    },
+                    {
+                        "name": "nameModify",
+                        "displayPropName": "New Name",
+                        "type": "String",
+                        "controlType": "text",
+                        "modelName": "setName",
+                        "mapping":"name"
+                    }
+                    ],
+	        "input_schema": "{
+                title: InputSchema,
+                type: object,
+                properties: {
+                    domain: {
+                        type: string
+                    },
+                    ocpApimSubscriptionKey: {
+                        type: string
+                    },
+                    idItem: {
+                        type: string
+                    },
+                    price: {
+                        type: string
+                    },
+                    name: {
+                        type: string
+                    }
+                }
+        }",
+            "output_schema": "{
+                title: OutputSchema,
+                type: object,
+                properties: {
+                    correlationId: {
+                        type: string
+                        }
+                    }
+            }"
+            }
+        ]
+  }
+]
+}
